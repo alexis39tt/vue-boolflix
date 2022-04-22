@@ -1,6 +1,6 @@
 <template>
   <header>
-    <input type="text" v-model="moviename" @keydown.enter="$emit('search', moviename)">
+    <input type="text" v-model.trim="moviename" @keydown.enter="$emit('search', moviename)">
     <button @click="$emit('search', moviename)">Cerca</button>
   </header>
 </template>
