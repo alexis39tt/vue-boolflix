@@ -60,7 +60,22 @@ export default {
 </script>
 
 <style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 body{
   background-color: #141414;
+}
+::-webkit-scrollbar{
+  width: 6px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #3a3a3a;
 }
 </style>
