@@ -1,7 +1,12 @@
 <template>
   <header>
-    <input type="text" v-model.trim="moviename" @keydown.enter="$emit('search', moviename)">
-    <button @click="$emit('search', moviename)">Cerca</button>
+    <div id="logo">
+      <img src="https://image.tmdb.org/t/p/w185/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="logo">
+    </div>
+    <div id="search">
+      <input type="text" v-model.trim="moviename" @keydown.enter="$emit('search', moviename)">
+      <button @click="$emit('search', moviename)">Cerca</button>
+      </div>
   </header>
 </template>
 

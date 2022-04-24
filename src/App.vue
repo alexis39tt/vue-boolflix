@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderSection @search="search" />
-    <MainSection :searchresult="searchresult" />
+    <MainSection :moviesearchresult="moviesearchresult" :tvsearchresult="tvsearchresult" />
   </div>
 </template>
 
@@ -18,7 +18,8 @@ export default {
   },
   data() {
     return {
-      searchresult: [],
+      moviesearchresult: [],
+      tvsearchresult: []
     };
   },
   created() {
@@ -32,7 +33,14 @@ export default {
             `https://api.themoviedb.org/3/search/movie?api_key=50f8b2f6edd169ac26db533d0338821c&query=${moviename}`
           )
           .then((res) => {
-            this.searchresult = res.data.results;
+            this.moviesearchresult = res.data.results;
+          });
+          axios
+          .get(
+            `https://api.themoviedb.org/3/search/tv?api_key=50f8b2f6edd169ac26db533d0338821c&query=${moviename}`
+          )
+          .then((res) => {
+            this.tvsearchresult = res.data.results;
           });
       } else {
         this.defaultmovies();
@@ -44,7 +52,7 @@ export default {
           `https://api.themoviedb.org/3/trending/movie/week?api_key=50f8b2f6edd169ac26db533d0338821c`
         )
         .then((res) => {
-          this.searchresult = res.data.results;
+          this.moviesearchresult = res.data.results;
         });
     },
   },
@@ -52,4 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
+body{
+  background-color: #141414;
+}
 </style>
