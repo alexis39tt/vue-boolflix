@@ -1,9 +1,24 @@
 <template>
   <main>
     <div id="container">
-      <MovieCard v-for="(elm, i) in moviesearchresult" :key="i" :moviesearchresult="moviesearchresult" :elm="elm"/>
-      <TvCard v-for="(elm, i) in tvsearchresult" :key="i" :tvsearchresult="tvsearchresult" :elm="elm"/>
-      <h1 class="no-results" v-if="moviesearchresult.length == 0 && moviesearchresult.length == 0">Nessun risultato trovato</h1>
+      <MovieCard
+        v-for="(elm, i) in moviesearchresult"
+        :key="i"
+        :moviesearchresult="moviesearchresult"
+        :elm="elm"
+      />
+      <TvCard
+        v-for="(elm, i) in tvsearchresult"
+        :key="i"
+        :tvsearchresult="tvsearchresult"
+        :elm="elm"
+      />
+      <h1
+        class="no-results"
+        v-show="moviesearchresult.length == 0 && moviesearchresult.length == 0"
+      >
+        Nessun risultato trovato
+      </h1>
     </div>
   </main>
 </template>
@@ -20,20 +35,21 @@ export default {
   },
   components: {
     MovieCard,
-    TvCard
+    TvCard,
   },
 };
 </script>
 
 <style scoped lang="scss">
-#container{
+#container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: center;
   padding: 0 20px;
-  .no-results{
+  .no-results {
     color: white;
+    padding: 20px;
   }
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <HeaderSection @search="search" />
-    <MainSection :moviesearchresult="moviesearchresult" :tvsearchresult="tvsearchresult" />
+    <MainSection
+      :moviesearchresult="moviesearchresult"
+      :tvsearchresult="tvsearchresult"
+    />
   </div>
 </template>
 
@@ -19,7 +22,7 @@ export default {
   data() {
     return {
       moviesearchresult: [],
-      tvsearchresult: []
+      tvsearchresult: [],
     };
   },
   created() {
@@ -35,7 +38,7 @@ export default {
           .then((res) => {
             this.moviesearchresult = res.data.results;
           });
-          axios
+        axios
           .get(
             `https://api.themoviedb.org/3/search/tv?api_key=50f8b2f6edd169ac26db533d0338821c&query=${moviename}`
           )
@@ -60,22 +63,25 @@ export default {
 </script>
 
 <style lang="scss">
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html{
+html {
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
 }
-body{
+body {
   background-color: #141414;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 6px;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #3a3a3a;
+}
+::-webkit-scrollbar-corner{
+  background: none;
 }
 </style>

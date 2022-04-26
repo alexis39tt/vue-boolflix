@@ -1,39 +1,47 @@
 <template>
   <header>
     <div id="logo">
-      <img src="https://image.tmdb.org/t/p/w185/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="logo">
+      <img
+        src="https://image.tmdb.org/t/p/w185/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
+        alt="logo"
+      />
     </div>
     <div id="search">
-      <input type="text" v-model.trim="moviename" @keydown.enter="$emit('search', moviename)" placeholder="Cerca un film...">
+      <input
+        type="text"
+        v-model.trim="moviename"
+        @keydown.enter="$emit('search', moviename)"
+        placeholder="Cerca un film..."
+      />
       <button @click="$emit('search', moviename)">
-        <font-awesome-icon icon="fa-solid fa-magnifying-glass"/>
+        <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
       </button>
-      </div>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'HeaderSection',
-  data(){
-    return{
-      moviename: ''
-    }
-  }
-}
+  name: "HeaderSection",
+  data() {
+    return {
+      moviename: "",
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
-header{
+header {
   display: flex;
   justify-content: space-between;
   height: 70px;
-  #logo{
+  #logo {
     margin: auto 10px;
   }
-  #search{
+  #search {
     margin: auto 10px;
-    input{
+    input {
       color: gray;
       line-height: 1.2rem;
       font-size: 1.2rem;
@@ -44,7 +52,7 @@ header{
       background-color: black;
       margin-right: 10px;
     }
-    button{
+    button {
       color: gray;
       line-height: 1.4rem;
       font-size: 1.2rem;
