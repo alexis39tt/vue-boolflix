@@ -3,13 +3,13 @@
     <div id="container">
       <MovieCard
         v-for="(elm, i) in moviesearchresult"
-        :key="i"
+        :key="'movie' + i"
         :moviesearchresult="moviesearchresult"
         :elm="elm"
       />
       <TvCard
         v-for="(elm, i) in tvsearchresult"
-        :key="i"
+        :key="'tv' + i"
         :tvsearchresult="tvsearchresult"
         :elm="elm"
       />

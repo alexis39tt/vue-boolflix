@@ -36,13 +36,13 @@
           <div v-if="votetransf(elm.vote_average) != 0">
             <font-awesome-icon
               v-for="(elm, i) in votetransf(elm.vote_average)"
-              :key="i"
+              :key="'a' + elm.name + i"
               icon="fa-solid fa-star"
               class="full-stars"
             />
             <font-awesome-icon
               v-for="(elm, i) in 5 - votetransf(elm.vote_average)"
-              :key="i"
+              :key="'b' + elm.name + i"
               icon="fa-regular fa-star"
               class="empty-stars"
             />
