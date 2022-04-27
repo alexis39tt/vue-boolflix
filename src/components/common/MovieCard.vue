@@ -2,6 +2,7 @@
   <div class="outer">
     <div class="movie">
       <div class="front">
+        <div :class="elm.backdrop_path != null ? 'fade' : ''"></div>
         <img
           :src="`https://image.tmdb.org/t/p/w300/${elm.backdrop_path}`"
           v-if="elm.backdrop_path != null"
@@ -89,6 +90,12 @@ export default {
 .back {
   transform: rotateX(180deg);
 }
+.fade{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #ffffff00 0%, black 100%);
+}
 .movie {
   width: 300px;
   margin: 20px 5px;
@@ -113,7 +120,7 @@ export default {
     p {
       margin: 0;
       display: inline;
-      background: rgba(255, 255, 255, 0.4);
+      color: #c3c3c3;
       border-radius: 2px;
       padding: 0 2px;
       transition: 0.2s;
@@ -125,7 +132,7 @@ export default {
     color: #ffbb01;
   }
   .empty-stars{
-    color: gray;
+    color: #c3c3c3;
   }
   .no-vote {
     color: #ff7301;
@@ -138,11 +145,11 @@ export default {
   width: 100%;
   height: 169px;
   bottom: 5px;
-  background: rgb(0, 0, 0);
+  background: black;
   overflow: auto;
   p,
   h3 {
-    color: white;
+    color: #c3c3c3;
   }
   .overview {
     margin-top: 10px;

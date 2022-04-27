@@ -50,6 +50,7 @@ export default {
       }
     },
     defaultmovies() {
+      this.tvsearchresult = [];
       axios
         .get(
           `https://api.themoviedb.org/3/trending/movie/week?api_key=50f8b2f6edd169ac26db533d0338821c`
@@ -81,7 +82,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: #3a3a3a;
 }
-::-webkit-scrollbar-corner{
+::-webkit-scrollbar-corner {
   background: none;
 }
 </style>
